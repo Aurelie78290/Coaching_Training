@@ -1,0 +1,95 @@
+.section-vision-coach {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 3rem;
+}
+
+.vision-yourCoach {
+  align-self: flex-end;
+  max-width: 1400px;
+}
+
+.yourCoach-title {
+  width: 8%;
+  background-color: #aeaeae;
+  color: #010102;
+  border-radius: 3px;
+  padding: 0.10rem 0.20rem;
+  margin: 0;
+}
+
+.yourCoach-content {
+  background-color: #aeaeae;
+  color: #010102;
+  border-radius: 3px;
+  padding: 0.75rem;
+  font-size: 0.9em;
+  font-style: italic;
+  width: 50%;
+  height: 9rem;
+  margin: 0.40rem 0;
+}
+
+.vision-yourCoach-grid {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.vision-photoCoach {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.vision-objectiveSite {
+  align-self: flex-start;
+  max-width: 1400px;
+}
+
+.objectiveSite-title {
+  width: 12%;
+  background-color: #65795b;
+  border-radius: 3px;
+  padding: 0.10rem 0.20rem;
+  margin: 0;
+}
+
+.objectiveSite-content {
+  background-color: #65795b;
+  border-radius: 3px;
+  padding: 0.75rem;
+  font-size: 0.9em;
+  font-style: italic;
+  width: 50%;
+  margin: 0.40rem 0;
+}
+
+.vision-kangourouRole {
+  align-self: flex-end;
+  max-width: 1400px;
+}
+
+.kangourouRole-title {
+  width: 22%;
+  background-color: #aeaeae;
+  color: #010102;
+  border-radius: 3px;
+  padding: 0.10rem 0.20rem;
+  margin: 0;
+}
+
+.kangourouRole-content {
+  background-color: #aeaeae;
+  color: #010102;
+  border-radius: 3px;
+  padding: 0.75rem;
+  font-size: 0.9em;
+  font-style: italic;
+  width: 50%;
+  margin: 0.40rem 0;
+}
