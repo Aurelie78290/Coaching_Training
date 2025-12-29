@@ -39,7 +39,7 @@ Le site permet de travailler :
   - les actions par street
   - les données nécessaires au replayer
 
-👉 Le backend est disponible dans un dépôt séparé :  
+👉 Le backend est disponible dans un dépôt séparé :  https://github.com/Aurelie78290/API_CoachingTraining
 
 ## 🔄 Fonctionnalités actuelles
 
