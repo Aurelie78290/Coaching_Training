@@ -6,6 +6,26 @@
   gap: 2rem;
 }
 
+.mains-list-title {
+  margin: 1rem;
+}
+
+.mains-list-content {
+  width: 55%;
+  height: auto;
+  margin: 0 0 4rem 0;
+  text-align: center;
+}
+
+.mains-list-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  margin: 2rem 0 0 0;
+  gap: 4rem;
+}
+
 .mains-list-buttons-mains {
   width: 18rem;
   display: flex;
@@ -18,5 +38,28 @@
   flex-wrap: wrap;
   flex-direction: row;
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 1rem 0 3rem 0;
+}
+
+.reset-button {
+  background-color: #ffd700;
+  color: #000;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #ffec85;
+  transform: scale(1.05);
+}
+
+button.active-stage {
+  box-shadow: 0 0 10px #fff;
+  border: 2px solid #fff;
+  background-color: #222;
+  color: #fff;
 }
