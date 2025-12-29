@@ -56,3 +56,28 @@ Le site permet de travailler :
 - ✍️ Notes et réflexions de l’élève
 - 🎥 Replayer amélioré (timing, animations)
 - 🧩 Autres exercices à venir (en refléxion avec le coach)
+
+## 📁 Project Structure (Frontend)
+
+src/
+ ├── components/
+ │   ├── MainsItem.tsx
+ │   └── ...
+ ├── pages/
+ │   ├── MainsList.tsx
+ │   └── ...
+ ├── assets/
+ │   ├── images/
+ ├── styles/
+ └── types/
+
+
+##👩‍💻 Objectif personnel
+
+Ce projet s’inscrit dans une démarche de reconversion vers le développement web, avec un focus sur :
+
+- la structuration d’une application React
+
+- la conception d’une API REST
+
+- l’UX orientée apprentissage
