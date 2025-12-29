@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+## 🃏 Poker Training Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plateforme d’entraînement au poker **technique et mental**, conçue pour un coach professionnel et destinée à ses élèves.
 
-Currently, two official plugins are available:
+Le site permet de travailler :
+- la lecture des mains
+- la compréhension des décisions street par street
+- la gestion mentale et la prise de recul
+- l’autonomie du joueur à travers des exercices interactifs
+- 
+## 🎯 Objectifs du projet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Proposer un **outil pédagogique interactif** pour les joueurs de poker en ligne
+- Rejouer des mains pas à pas (préflop → river)
+- Visualiser les actions de chaque joueur dans un format proche d’un **replayer**
+- Mettre en avant l’aspect **mental et décisionnel**, pas seulement les cartes
+- Créer une base évolutive pour intégrer d’autres exercices (focus main, training room, routines mentales…)
 
-## React Compiler
+## 🧠 À qui s’adresse ce projet ?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Aux **élèves du coach** (joueurs amateurs à confirmés)
+- Aux joueurs souhaitant structurer leur progression
+- À terme : à toute personne intéressée par un apprentissage sérieux du poker
 
-## Expanding the ESLint configuration
+## 🛠️ Stack technique
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+- ⚛️ **React**
+- 🟦 **TypeScript**
+- 🎨 CSS (layout custom, animations)
+- Gestion d’état avec hooks (`useState`, `useEffect`)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend (API séparée)
+- 🟢 **Node.js**
+- 🚂 **Express**
+- API REST fournissant :
+  - les mains de poker
+  - les joueurs
+  - les actions par street
+  - les données nécessaires au replayer
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+👉 Le backend est disponible dans un dépôt séparé :  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔄 Fonctionnalités actuelles
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- ✔️ Navigation entre plusieurs mains
+- ✔️ Replayer street par street (preflop, flop, turn, river)
+- ✔️ Déroulé des actions une par une
+- ✔️ Mise en évidence du joueur actif
+- ✔️ Affichage progressif du board
+- ✔️ Table de poker avec joueurs positionnés visuellement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+  ## 🚧 Fonctionnalités à venir
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 📊 Statistiques simples par main
+- ✍️ Notes et réflexions de l’élève
+- 🎥 Replayer amélioré (timing, animations)
+- 🧩 Autres exercices à venir (en refléxion avec le coach)
