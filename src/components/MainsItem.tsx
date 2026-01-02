@@ -1,7 +1,7 @@
 import cardBack from "../assets/images/CardBack.png";
 import "./MainsItem.css";
 
-function MainsItem({ hand, stage, actionIndex, playersOrder, currentAction }) {
+function MainsItem({ hand, stage, actionIndex, playersOrder, currentAction, buttonSeat, smallBlind, bigBlind }) {
   const isRed = (card: string) => card.includes("♥") || card.includes("♦");
 
   const currentStreet = hand.streets.find(s => s.name === stage);
@@ -18,14 +18,20 @@ function MainsItem({ hand, stage, actionIndex, playersOrder, currentAction }) {
         const isActive = currentAction?.playerId === player.id;
         const playerAction =
           isActive ? currentAction?.action + (currentAction.amount ? ` ${currentAction.amount}` : "") : "";
-
+        const isDealer = player.seat === buttonSeat;
+        
         return (
           <div
             key={player.id}
             className={`player player-${player.seat} ${isActive ? "active" : ""}`}
           >
             <span className="player-name">{player.name}</span>
+            {isDealer && <span className="dealer-button">D</span>}
+            {player.seat === smallBlind && <span className="blind sb">SB</span>}
+            {player.seat === bigBlind && <span className="blind bb">BB</span>}
             {playerAction && <span className="player-action">{playerAction}</span>}
+
+  
           </div>
         );
       })}

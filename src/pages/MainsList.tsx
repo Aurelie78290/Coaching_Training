@@ -77,6 +77,9 @@ function MainsList() {
           actionIndex={actionIndexInStage}
           playersOrder={playersOrder}
           currentAction={currentAction}
+          buttonSeat={buttonSeat}
+          smallBlind={currentMain.table.smallBlind}
+          bigBlind={currentMain.table.bigBlind}
         />
       )}
 
