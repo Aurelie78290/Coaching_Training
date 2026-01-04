@@ -8,8 +8,8 @@
   margin: 50px 0 30px 0;
   border-radius: 65px;
   list-style: none;
-  width: 40rem;
-  height: 18rem;
+  width: 44rem;
+  height: 22rem;
 
   display: flex;
   justify-content: center;
@@ -24,6 +24,7 @@
 .player {
   position: absolute;
   opacity: 80%;
+  text-transform: uppercase;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -53,19 +54,19 @@
 /*vilains*/
 .player-6 {
   right: -55px;
-  top: 150px;
+  top: 190px;
   transform: translateY(-60%);
 }
 
 .player-5 {
   top: -60px;
-  left: 80%;
+  left: 82%;
   transform: translateX(-50%);
 }
 
 .player-4 {
   top: -60px;
-  left: 48%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -122,18 +123,191 @@
 }
 
 .player.active {
-  box-shadow: 0 0 15px 4px yellow; /* halo joueur actif */
+  box-shadow: 0 0 15px 4px gold; /* halo joueur actif */
 }
 
 .player-action {
+  position: absolute;
+  top: 100%;
   display: block;
-  margin-top: 4px;
-  font-size: 0.8rem;
+  margin-top: 8px;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #fff;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.player.fold {
+  opacity: 0.4;
 }
 
 .active-stage {
   box-shadow: 0 0 10px 3px white; /* halo stage actif */
+}
+
+.player-tags {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.blind {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: white;
+}
+
+.blind.sb {
+  background-color: orange;
+  position: absolute;
+  top: -8px;
+  left: 8px;
+}
+
+.blind.bb {
+  background-color: red;
+  position: absolute;
+  top: -8px;
+  left: 8px;
+}
+
+.blinds-on-table {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  gap: 6px;
+}
+
+.chip {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gold;
+}
+
+.dealer-button {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #8b6b00;
+
+  background: radial-gradient(circle at 30% 30%, #fff6cc, #b8860b);
+  color: black;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.dealer-button {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.blinds-on-table {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.chip {
+  position: absolute;
+  width: 55px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+  color: #000;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+.chip.sb {
+  opacity: 0.9;
+}
+
+.chip.bb {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.chip.bet {
+  position: absolute;
+  bottom: -18px;
+  background: none;
+  color: white;
+  padding: 4px;
+  border-radius: 15%;
+  font-size: 0.75rem;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+.jeton {
+  width: 20px;
+  height: auto;
+}
+
+.pot {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 6px 16px;
+  text-align: center;
+
+  color: #fff;
+  font-weight: bold;
+  z-index: 4;
+}
+
+.pot-label {
+  font-size: 14px;
+  color: #f0d98c;
+  display: block;
+}
+
+.player-stack {
+  display: block;
+  margin-top: 2px;
+
+  font-size: 11px;
+  font-weight: bold;
+  color: #8b6b00; 
+
+  text-align: center;
 }
