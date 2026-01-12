@@ -44,25 +44,24 @@
 }
 
 
-  
-.home-cta {background-image: linear-gradient(to right, #757F9A 0%, #D7DDE8  51%, #757F9A  100%)}
 .home-cta {
     margin-top: 40px;
-    padding: 15px 30px;
+    padding: 14px 25px;
     text-align: center;
     transition: 0.5s;
-    background-size: 200% auto;
+    background: transparent;
     color: var(--color-link);
     font-family: var(--font-heading);   
     font-size: 1.5em;         
-    box-shadow: 0 0 10px #b9b9c4;
     font-weight: 500;
-    border-radius: 10px;
     display: block;
+     box-shadow:
+    -3px 0 10px -2px rgba(255,255,255,0.18),
+    0 6px 12px -2px rgba(255,255,255,0.18) !important;
 }
 
           .home-cta:hover {
-            background-position: right center; /* change the direction of the change here */
+            background-color: var(--color-link);
             color: #edebe8;
             text-decoration: none;
           }

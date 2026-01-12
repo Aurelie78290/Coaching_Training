@@ -83,6 +83,8 @@ useEffect(() => {
 
 }, [globalActionIndex, currentIndex, currentMain]);
 
+const isHandFinished =
+  globalActionIndex === allActions.length - 1;
 
   // Navigation actions
   const nextAction = () => {
@@ -105,7 +107,7 @@ useEffect(() => {
   
   
   useEffect(() => {
-    fetch("http://localhost:4242/mainsList")
+    fetch("http://localhost:4242/api/mainsList")
       .then(res => res.json())
       .then(data => setMains(data))
       .catch(err => console.error(err));
@@ -134,6 +136,7 @@ useEffect(() => {
           buttonSeat={buttonSeat}
           betsByPlayer={betsByPlayer}
           pot={pot}
+           winner={isHandFinished ? currentMain.winner : null}
         />
       )}
 

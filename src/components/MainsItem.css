@@ -23,23 +23,23 @@
 
 .player {
   position: absolute;
-  opacity: 80%;
   text-transform: uppercase;
-  z-index: 1;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle,rgba(185, 185, 196, 1) 0%, rgba(237, 235, 232, 1) 78%);
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  padding: 0.5rem;
+  background:radial-gradient(circle at 30% 30%, #f0f0f0, #757575);
+  border-radius: 6%;
+  border: 1px solid #374151;
+  width: 120px;
+  height: 65px;
+  padding: 0.35rem 0 0.15rem 1.25rem;
 }
 
 .player-name {
   font-size: 0.9rem;
-  color: var(--color-primary);
+  color: black;
   font-weight: 500;
   pointer-events: none;
 }
@@ -51,9 +51,21 @@
   transform: translateY(-50%);
 }
 
+.hero-icon {
+  position: absolute;
+  top: 16px;
+  left: 20%;
+  transform: translateX(-50%);
+
+
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
 /*vilains*/
 .player-6 {
-  right: -55px;
+  right: -95px;
   top: 190px;
   transform: translateY(-60%);
 }
@@ -78,8 +90,20 @@
 
 .player-2 {
   top: 50%;
-  left: -55px;
+  left: -100px;
   transform: translateY(-50%);
+}
+
+.vilain-icon {
+  position: absolute;
+  top: 2px;
+  left: 18%;
+  transform: translateX(-50%);
+
+
+  width: 45px;
+  height: 30px;
+  z-index: 10;
 }
 
 .card-back-container {
@@ -138,9 +162,7 @@
   text-transform: uppercase;
 }
 
-.player.fold {
-  opacity: 0.4;
-}
+
 
 .active-stage {
   box-shadow: 0 0 10px 3px white; /* halo stage actif */
@@ -155,23 +177,38 @@
 .blind {
   font-size: 0.7rem;
   font-weight: bold;
-  padding: 1px 4px;
+  padding: 1px;
   border-radius: 3px;
-  color: white;
 }
 
 .blind.sb {
-  background-color: orange;
+  background: radial-gradient(circle at 30% 30%, #e3f2fd, #1565c0);
   position: absolute;
-  top: -8px;
-  left: 8px;
+  top: -18px;
+  left: 98px;
+  border-radius: 50%;
+  border: 2px solid #1565c0;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: darkblue;
 }
 
 .blind.bb {
-  background-color: red;
+  background: radial-gradient(circle at 30% 30%, #fff6cc, #b8860b);
   position: absolute;
-  top: -8px;
-  left: 8px;
+  top: -18px;
+  left: 98px;
+  border-radius: 50%;
+  border: 2px solid #8b6b00;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b6b00; 
 }
 
 .blinds-on-table {
@@ -195,15 +232,15 @@
 
 .dealer-button {
   position: absolute;
-  top: -2px;
-  right: -5px;
+  top: -16px;
+  right: 6px;
 
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 2px solid #8b6b00;
+  border: 2px solid #374151;
 
-  background: radial-gradient(circle at 30% 30%, #fff6cc, #b8860b);
+  background: radial-gradient(circle at 30% 30%, #e5e7eb, #374151);
   color: black;
   font-size: 0.7rem;
   font-weight: 700;
@@ -213,7 +250,7 @@
   justify-content: center;
 
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  z-index: 5;
+  z-index: 20;
 }
 
 .dealer-button {
@@ -277,20 +314,22 @@
   height: auto;
 }
 
-.pot {
+.pot-amount {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: 10px;
+  width: 60px;
 
   padding: 6px 16px;
   text-align: center;
 
-  color: #fff;
+  color: gold;
   font-weight: bold;
   z-index: 4;
 }
@@ -311,3 +350,58 @@
 
   text-align: center;
 }
+
+.hero-cards {
+  position: absolute;
+  bottom: 2px;
+  right: 247px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+
+  z-index: 5;
+}
+
+.hero-card {
+  width: 30px;
+  height: 46px;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card.red {
+  color: #c0392b;
+}
+
+.pot-center {
+  position: absolute;
+  bottom: 66%;
+  left: 55%;
+  transform: translate(-50%, 50%);
+  width: 100px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.chip-pot {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+  z-index: 30;
+  will-change: transform;
+}
+
+.chip-pot.animate {
+  transform: translate(
+    var(--dx, 0),
+    var(--dy, 0)
+  );
+}
+

@@ -10,6 +10,10 @@ import NotFound from './pages/NotFound.tsx';
 import Training from './pages/Training.tsx';
 import './index.css';
 import News from './pages/News.tsx';
+import Login from './pages/Login.tsx';
+import PrivateRoute from './components/PrivateRoute.tsx';
+import Register from './pages/Register.tsx';
+import { AuthProvider } from './contexts/AuthContext.tsx';
 
 
 
@@ -22,24 +26,32 @@ const router = createBrowserRouter ([
         element: <Home />
       },
       {
+        path: '/Login',
+        element: <Login />
+      },
+      {
+        path: '/Register',
+        element: <Register />
+      },
+      {
         path: '/Coach',
-        element: <Coach />
+        element: <PrivateRoute><Coach /></PrivateRoute>
       },
       {
         path: '/News',
-        element: <News />
+        element: <PrivateRoute><News /></PrivateRoute>
       },
       {
         path: '/Training',
-        element: <Training />
+        element: <PrivateRoute><Training /></PrivateRoute>
       },
       {
         path: '/MainsList',
-        element: <MainsList />
+        element: <PrivateRoute><MainsList /></PrivateRoute>
       },
       {
         path: '/Faq',
-        element: <Faq />
+        element: <PrivateRoute><Faq /></PrivateRoute>
       },
       {
         path: '*',
@@ -53,7 +65,9 @@ const rootElement = document.getElementById("root");
 
 if (rootElement != null) {
   createRoot(rootElement).render(
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
 }
     

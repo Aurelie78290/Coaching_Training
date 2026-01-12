@@ -1,10 +1,12 @@
 import { NavLink } from "react-router";
 import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
 import logo from "../assets/images/logochou.png";
 
 import "./Header.css";
 
 function Header () {
+  const { logout } = useAuth()
   const [open, setOpen] = useState(false);
   
   console.log("Submenu open state:", open); // Debug
@@ -50,6 +52,7 @@ function Header () {
           <li>
             <NavLink to="/Faq">FAQ</NavLink>
           </li>
+          <li><button onClick={logout}>Déconnexion</button></li>
         </ul>
       </nav>
     </header> 
